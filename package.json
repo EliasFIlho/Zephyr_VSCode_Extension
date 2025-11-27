@@ -16,10 +16,6 @@
   "contributes": {
     "commands": [
       {
-        "command": "zephyr-esp.helloWorld",
-        "title": "Zephyr ESP: Hello World"
-      },
-      {
         "command": "zephyr-esp.set_env",
         "title": "Zephyr ESP: Set Env"
       },
