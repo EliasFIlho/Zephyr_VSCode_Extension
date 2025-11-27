@@ -1,0 +1,81 @@
+{
+  "name": "zephyr-esp",
+  "displayName": "Zephyr_ESP",
+  "description": "A vscode approach to compile and flash zephyr applications for esp32 microcontrollers",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.106.1"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "zephyr-esp.helloWorld",
+        "title": "Zephyr ESP: Hello World"
+      },
+      {
+        "command": "zephyr-esp.set_env",
+        "title": "Zephyr ESP: Set Env"
+      },
+      {
+        "command": "zephyr-esp.build_clean",
+        "title": "Zephyr ESP: Build Clean"
+      },
+      {
+        "command": "zephyr-esp.flash",
+        "title": "Zephyr ESP: Flash"
+      },
+      {
+        "command": "zephyr-esp.monitor",
+        "title": "Zephyr ESP: Monitor"
+      },
+      {
+        "command": "zephyr-esp.flash_monitor",
+        "title": "Zephyr ESP: Flash and Monitor"
+      },
+      {
+        "command": "zephyr-esp.configurePaths",
+        "title": "Zephyr ESP: Configure Project Paths"
+      }
+    ],
+    "configuration": {
+      "title": "Zephyr ESP Settings",
+      "properties": {
+        "zephyrEsp.projectPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the main Zephyr project folder."
+        },
+        "zephyrEsp.venvPath": {
+          "type": "string",
+          "default": "",
+          "description": "Path to the Zephyr Python virtual environment (activate file)."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.106.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.46.3",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
