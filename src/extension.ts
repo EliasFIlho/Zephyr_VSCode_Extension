@@ -17,8 +17,11 @@ export function activate(context: vscode.ExtensionContext) {
 		).then(selection => {
 			if (selection === "Yes") {
 				configure_paths();
+				set_env();
 			}
 		});
+	}else{
+		set_env();
 	}
 
 	const commands = [
