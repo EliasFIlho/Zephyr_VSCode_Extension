@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { registerStatusBar } from './ui/statusbar';
-import { set_env, build_clean, flash, monitor, flash_and_monitor, configure_paths } from './cmds/cmds_callback';
+import { set_env, build_clean, flash, monitor, flash_and_monitor, configure_paths, select_board } from './cmds/cmds_callback';
 
 export function activate(context: vscode.ExtensionContext) {
 
@@ -30,7 +30,8 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.commands.registerCommand('zephyr-esp.flash', flash),
 		vscode.commands.registerCommand('zephyr-esp.monitor', monitor),
 		vscode.commands.registerCommand('zephyr-esp.flash_monitor', flash_and_monitor),
-		vscode.commands.registerCommand('zephyr-esp.configurePaths', configure_paths)
+		vscode.commands.registerCommand('zephyr-esp.configurePaths', configure_paths),
+		vscode.commands.registerCommand('zephyr-esp.select_board',select_board)
 	];
 	context.subscriptions.push(...commands);
 	

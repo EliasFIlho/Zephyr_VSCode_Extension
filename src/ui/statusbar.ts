@@ -45,6 +45,15 @@ export function registerStatusBar(context: vscode.ExtensionContext) {
     ConfigPathsButton.command = "zephyr-esp.configurePaths";
     ConfigPathsButton.show();
 
+    const ConfigBoardButton = vscode.window.createStatusBarItem(
+        vscode.StatusBarAlignment.Left,
+        5
+    );
+    ConfigBoardButton.text = "$(gear) Config Project Board";
+    ConfigBoardButton.command = "zephyr-esp.select_board";
+    ConfigBoardButton.show();
+
+
     // Add items to subscriptions
-    context.subscriptions.push(buildButton, FlashButton, monitorButton, buildFlashButton,ConfigPathsButton);
+    context.subscriptions.push(buildButton, FlashButton, monitorButton, buildFlashButton,ConfigPathsButton,ConfigBoardButton);
 }

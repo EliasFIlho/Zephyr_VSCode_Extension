@@ -38,6 +38,10 @@
       {
         "command": "zephyr-esp.configurePaths",
         "title": "Zephyr ESP: Configure Project Paths"
+      },
+      {
+        "command": "zephyr-esp.select_board",
+        "title": "Zephyr ESP: Select ESP32 Project Board"
       }
     ],
     "configuration": {
